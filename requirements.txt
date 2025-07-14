@@ -1,8 +1,16 @@
 #we need python 3.11.13
 
+numpy
 huggingface_hub[hf_xet]
 torch==2.5.1
 torchvision==0.20.1
 torchaudio==2.5.1
 transformers==4.36.2
 TTS
+fastapi
+uvicorn
+pydantic
+requests
+python-multipart
+librosa
+soundfile

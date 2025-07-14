@@ -6,7 +6,7 @@ import tempfile
 import os
 import torchaudio
 
-from model_utils import (
+from tts_utils.model_utils import (
     load_xtts_model,
     verify_xtts_components,
     get_model_info,
@@ -450,7 +450,7 @@ class ValenceArousalXTTS(nn.Module):
 
 
 if __name__ == "__main__":
-    model = ValenceArousalXTTS(local_model_dir="./models/xtts_v2")
+    model = ValenceArousalXTTS(local_model_dir="../models/xtts_v2")
 
     if torch.cuda.is_available():
         model = model.cuda()

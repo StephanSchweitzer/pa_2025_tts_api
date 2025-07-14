@@ -8,8 +8,8 @@ logger = logging.getLogger(__name__)
 
 def create_directories():
     directories = [
-        Path("models/xtts_v2"),
-        Path("models/adapters")
+        Path("../models/xtts_v2"),
+        Path("../models/adapters")
     ]
 
     for directory in directories:
@@ -20,7 +20,7 @@ def create_directories():
 def download_base_xtts():
     logger.info("Downloading base XTTS v2 model...")
     try:
-        models_dir = Path("models/xtts_v2")
+        models_dir = Path("../models/xtts_v2")
         snapshot_download(
             repo_id="coqui/XTTS-v2",
             local_dir=str(models_dir),
@@ -34,7 +34,7 @@ def download_base_xtts():
 def download_voicecast_adapter():
     logger.info("Downloading voicecast emotional adapter...")
     try:
-        adapter_dir = Path("models/adapters")
+        adapter_dir = Path("../models/adapters")
         snapshot_download(
             repo_id="StephanSchweitzer/pa_2025_finetuned_emotion_xtts_v2",
             local_dir=str(adapter_dir),
@@ -49,14 +49,14 @@ def download_voicecast_adapter():
 def verify_downloads():
     logger.info("Verifying downloads...")
 
-    base_model_path = Path("models/xtts_v2")
+    base_model_path = Path("../models/xtts_v2")
     if base_model_path.exists() and any(base_model_path.iterdir()):
         logger.info(f"Base model found in {base_model_path}")
     else:
         logger.error(f"Base model not found in {base_model_path}")
         return False
 
-    adapter_path = Path("models/adapters")
+    adapter_path = Path("../models/adapters")
     if adapter_path.exists() and any(adapter_path.iterdir()):
         logger.info(f"Adapter found in {adapter_path}")
         files = [f.name for f in adapter_path.iterdir()]
