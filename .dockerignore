@@ -1,0 +1,25 @@
+# Python
+__pycache__/
+
+venv/
+env/
+ENV/
+
+.idea/
+
+.DS_Store
+Thumbs.db
+
+.git/
+.gitignore
+
+Dockerfile*
+docker-compose*
+.dockerignore
+
+models/
+
+.env
+.env.*
+
+.pytest_cache/

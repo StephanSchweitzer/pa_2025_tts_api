@@ -37,21 +37,6 @@ class TTSClient:
                    repetition_penalty: float = 2.0,
                    top_p: float = 0.8,
                    output_file: str = None):
-        """
-        Synthesize speech with reference audio
-
-        Args:
-            text: Text to synthesize
-            valence: Emotional valence (-1.0 to 1.0)
-            arousal: Emotional arousal (-1.0 to 1.0)
-            reference_audio_path: Path to reference audio file
-            language: Target language
-            temperature: Generation temperature
-            length_penalty: Length penalty
-            repetition_penalty: Repetition penalty
-            top_p: Top-p sampling
-            output_file: Output filename (auto-generated if None)
-        """
 
         if not Path(reference_audio_path).exists():
             print(f"❌ Reference audio file not found: {reference_audio_path}")
